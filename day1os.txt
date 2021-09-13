@@ -1,0 +1,54 @@
+hardwaare
+system application
+software aollication
+
+
+linux is open source .
+linus torvalds
+
+1994
+more than 200 version of linux are in market.
+community and enterprise version.
+
+white red grey black rat hacking difference asssignment.(hackers)
+
+
+black hat hackers do defraud and blackmail.
+white hat hackers they protect from bad hackers.
+grey hat hackers are also like white hat hackers but but without the permission.
+
+
+Red hat hackers targets linux systems.they do a wrong path to do the right thing.they attack black hat hackers aggressivey.
+blue hat hakers do hacking for a personal revenge.
+green hat hackeer lack in hacking skills they are eager to learn the tricks.
+
+ 
+different kind of attacks (virus)
+interfaces
+pre processor directive
+#pragma
+
+viruses
+worms
+macro virus
+email virus
+trojan virus
+phishing
+spyware
+denial of service attacks
+cookies
+spam
+
+
+
+number system
+binary number system
+decimal number system
+logic gates
+universal gates
+shell 
+
+bosix
+
+
+
