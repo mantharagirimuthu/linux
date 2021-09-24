@@ -1,0 +1,66 @@
+
+--To find trainer giri
+
+db.trainer.find({name:'giri'})
+
+--To find trainerdhoni
+
+db.trainer.find({name:'dhoni'})
+
+--To find trainer giri in formatted manner
+
+db.trainer.find({name:'giri'}).pretty()
+
+--To find trainer with 90000 likes
+
+db.trainer.find({likes:90000}).pretty()
+
+--To find trainer with greater than 90000 likes
+
+db.trainer.find({likes:{$gt:90000}}).pretty()
+
+--To find trainer with lesser than 90000 likes
+
+db.trainer.find({likes:{$lt:90000}}).pretty()
+
+--To find trainer with greater than or equal to  90000 likes
+
+db.trainer.find({likes:{$gte:90000}}).pretty()
+
+--To find trainer with less than or equal  to 90000 likes
+
+db.trainer.find({likes:{$lte:90000}}).pretty()
+
+--To find trainer whos tags are HTML or CSS3
+
+ db.trainer.find({tags:{$in:['HTML','CSS3']}}).pretty()
+
+--Trainer whos tags are java or html,sort by name
+
+db.trainer.find({tags:{$in:['Java','HTML']}}).sort({name:1}).pretty()
+
+--Trainer whos tags are java or html,sort by name desc
+
+db.trainer.find({tags:{$in:['Java','HTML']}}).sort({name:-1}).pretty()
+
+--To find trainer with greater than or equal to  50000 and lessthan or equal to 90000 likes
+
+db.trainer.find({likes:{$gte:50000,$lte:90000}}).pretty()
+
+--To find trainer whos tags are HTML and CSS3
+
+
+--update record
+
+> db.trainer.update({likes:80000},{$set:{likes:70000}})
+
+
+db.trainer.update({tags:'HTML'},{$set:{tags:'HTML5'}})
+
+--Trainer with likes >= and tags =HTML5
+
+
+--CURSOR
+var mycur =db.trainer.find({tags:'HTML'})
+mycur.forEach(printjson)
+db.trainer.find({$and :[{tags:'HTML'},{likes:{$gte:50000}}]}).pretty()
