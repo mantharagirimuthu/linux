@@ -1,0 +1,127 @@
+package com.company;
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]) {
+
+        Exdcalc cal = new Exdcalc();
+        System.out.println("1)add 2)sub 3)Multiply 4)division 5)odd or not 6)prime or not 7)sqroot ");
+        Scanner sc = new Scanner(System.in);
+        int option = sc.nextInt();
+        switch (option) {
+            case 1:
+                cal.add();
+                break;
+            case 2:
+                cal.sub();
+                break;
+            case 3:
+                cal.mult();
+                break;
+            case 4:
+                cal.div();
+                break;
+            case 5:
+                cal.odd();
+                break;
+            case 6:
+                cal.prime();
+                   break;
+            //case 7:
+                 //  cal.sqroot();
+                  // break;
+        }
+    }
+}
+
+
+
+
+
+
+package com.company;
+import java.util.Scanner;
+
+public class Calculator {
+    Scanner sc = new Scanner(System.in);
+
+    public void add()
+    {
+        System.out.println("Enter the number");
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        int add=a+b;
+        System.out.println("add" + add);
+    }
+
+    public void sub()
+    {
+        System.out.println("Enter the number");
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        int sub=a-b;
+        System.out.println("sub" + sub);
+    }
+    public void mult()
+    {
+        System.out.println("Enter the number");
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        int mult=a*b;
+        System.out.println("mult" + mult);
+    }
+
+    public void div()
+    {
+        System.out.println("Enter the number");
+        int a= sc.nextInt();
+        int b= sc.nextInt();
+        int div=a/b;
+        System.out.println("div" + div);
+    }
+}
+
+
+
+
+
+
+package com.company;
+public class Exdcalc extends Calculator {
+    public void odd() {
+        System.out.println("Enter the number");
+        int a = sc.nextInt();
+        if (a % 2 == 0) {
+            System.out.println("not odd");
+        }
+        else{
+            System.out.println("odd");
+    }
+    }
+
+    public void prime() {
+        System.out.println("Enter the number");
+        int a = sc.nextInt();
+        boolean flag = false;
+        for (int i = 2; i <= a / 2; i++) {
+            if (a % i == 0) {
+                flag = true;
+                break;
+            }
+        }
+            if (!flag)
+                System.out.println("primenumber");
+            else
+                System.out.println("Not a prime number");
+        }
+
+
+    /*public void sqroot() {
+
+        System.out.println("Enter the number");
+        int a = sc.nextInt();
+        System.out.println("Sqrt" + (math.sqrt(a)));
+    }*/
+}
+
+
+
