@@ -1,0 +1,78 @@
+[2:17 AM] Mythili
+package com.SpringDemo.DemoProject.Services;
+
+import com.SpringDemo.DemoProject.Books;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+//logic part
+@Service
+public class MyServices implements MyServicesInterfaces{​​​​​​
+
+    List<Books> list = new ArrayList<Books>();
+
+    public MyServices(){​​​​​​
+        this.list.add(new Books(12,"java","about java"));
+        this.list.add(new Books(13,"python","about python"));
+
+    }​​​​​​
+
+    //get all the books from the library
+    @Override
+    public List<Books> getBooks() {​​​​​​
+        return list;
+    }​​​​​​
+
+    @Override
+    public Books addBook(Books books) {​​​​​​
+        this.list.add(books);
+        return books;
+    }​​​​​​
+
+    @Override
+    public Books getByid(int id) {​​​​​​
+        for (Books books:this.list) {​​​​​​
+            if(books.getId()==id){​​​​​​
+                return books;
+            }​​​​​​
+        }​​​​​​
+        return null;
+    }​​​​​​
+}​​​​​​
+[2:19 AM] Mythili
+package com.SpringDemo.DemoProject.Controller;
+
+import com.SpringDemo.DemoProject.Books;
+import com.SpringDemo.DemoProject.Services.MyServices;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class MyController {​​​​​​
+    @Autowired
+    MyServices myservices;
+    @GetMapping("books")
+    public List<Books> books(){​​​​​​
+        return myservices.getBooks();
+    }​​​​​​
+
+    @PostMapping("addbook")
+    public Books addBook(@RequestBody Books book){​​​​​​
+        return myservices.addBook(book);
+
+    }​​​​​​
+    @GetMapping("bookbyid")
+    public Books bookByid(@RequestParam("id") int id){​​​​​​
+        return myservices.getByid(id);
+    }​​​​​​
+
+}​​​​​​
+
+
+
+
+
