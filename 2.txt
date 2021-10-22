@@ -1,6 +1,70 @@
 
-<html> <head> <style> form {​​​​​​ background-color: skyblue; align-content: center; margin:auto; margin-top: 50px; border: solid; height: 200px; width: 500px; }​​​​​​ label{​​​​​​ margin:30px; }​​​​​​ .button{​​​​​​ margin-left :70px; }​​​​​​ h1{​​​​​​ margin-top: 40px; margin-left: 500px; color: red; }​​​​​​ </style> </head> <body> <h1>Student form</h1> <form action="save" modelAttribute="student"> <label>student name</label> <input type="text" name="name" placeholder="name"/><br> <label>college name</label> <input type="text" name="college"placeholder="college"/><br> <label>Branch</label> <input type="text" name="branch" placeholder="name" style="margin-left: 40px";/><br> <label>Age</label> <input type="number" name="age" placeholder="age" style="margin-left: 60px"/><br> <button class="button" >button</button> </form> </body></html>
 
 
-package com.jspdemo.jspdemo.controller;import com.jspdemo.jspdemo.Student;import com.jspdemo.models.Model;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.stereotype.Controller;import org.springframework.web.bind.annotation.ModelAttribute;import org.springframework.web.bind.annotation.RequestMapping;@Controllerpublic class Controllers {​​​​​​ @Autowired Model model; @RequestMapping("/home") public String home() {​​​​​​ return "home"; }​​​​​​ @RequestMapping("/form") public String form() {​​​​​​ return "form"; }​​​​​​ @RequestMapping("/save") public String save(@ModelAttribute("student") Student student) {​​​​​​ System.out.println(student.name); model.insert(student); return "completed"; }​​​​​​}​​​​​​
+package com.jspdemo.jspdemo.controller;
+import com.jspdemo.jspdemo.Student;
+import com.jspdemo.models.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+@Controller
+public class Controllers {
+@Autowired
+Model model;
+@RequestMapping("/home")
+public String home() {
+return "home";
+}
+@RequestMapping("/form")
+public String form() {
+return "form";
+}
+@RequestMapping("/save")
+public String save(@ModelAttribute("student") Student student) {
+System.out.println(student.name);
+model.insert(student);
+return "completed";
+}
+}
 
+<html>
+<head>
+<style>
+form {
+background-color: skyblue;
+align-content: center;
+margin:auto;
+margin-top: 50px;
+border: solid;
+height: 200px;
+width: 500px;
+}
+label{
+margin:30px;
+}
+.button{
+margin-left :70px;
+}
+h1{
+margin-top: 40px;
+margin-left: 500px;
+color: red;
+}
+</style>
+</head>
+<body>
+<h1>Student form</h1>
+<form action="save" modelAttribute="student">
+<label>student name</label>
+<input type="text" name="name" placeholder="name"/><br>
+<label>college name</label>
+<input type="text" name="college"placeholder="college"/><br>
+<label>Branch</label>
+<input type="text" name="branch" placeholder="name" style="margin-left: 40px";/><br>
+<label>Age</label>
+<input type="number" name="age" placeholder="age" style="margin-left: 60px"/><br>
+<button class="button" >button</button>
+</form>
+</body>
+</html>
