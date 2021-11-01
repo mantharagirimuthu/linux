@@ -1,0 +1,130 @@
+<!DOCTYPE html>   <!-- bydefault --><!--dtd: To validate the tags we r using-->
+<html>
+     <head>
+              <meta charset="UTF-8">  <!-- unicode transformation format-->
+              <title>Contact Us</title>
+              <link rel="shortcut icon" href="image/logo.png">
+              <link rel="stylesheet" href="contact.css">
+              <meta http-equiv="X-UA-Compatible" content="IE-edge">
+              <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+              <!--Using Fontawesome------------->
+              <script crossorigin="anonymous" src="https://kit.fontawesome.com/70a642cd7c.js"></script>
+              
+              <style>
+                span{
+                  color: red;
+                }
+                table{
+                      background-color: lightgrey ;
+                      border: 5px solid lime;
+                      box-shadow: 1px lightgrey;
+                      border-radius: 20px;
+                      width: 600px;
+                      height: 400px;
+                      padding: 30px;
+                      margin-left: 350px;
+                      
+                      margin-top: 80px;
+                      margin-bottom: 100px;
+                     
+                  }
+                  label{
+                    color: whitesmoke;
+                  }
+                  body{
+                      background-image: url("image/poduct\ bg.png");
+                  }
+                  input{
+                      background-color: whitesmoke;
+                      border-radius: 6px;
+                  }
+                  label{
+                      font-family:myriad pro;
+                      color: teal;
+                  }
+                  #address{
+                    background-color: whitesmoke;
+                  }
+                  input{
+                    height: 19px;
+                    
+                  }
+                  label{
+                    font-size: 18px;
+                  }
+                  #i1{
+                    align-self: center;
+                    height: 30px;
+                    justify-content: center;
+                    align-content: center;
+                    
+                  }                  
+                  #i1:hover{
+                    color: whitesmoke;
+                    background-color: blue;
+                  }
+              </style>
+            
+     </head>
+        <body>
+
+          <nav class="head4">
+            <ul>
+                <li><a href="index.html" class="head">Home</a></li>
+                <li><a href="index.html" class="head">Our Product</a></li>
+                <li><a href="about.html" class="head" >About Us</a></li>
+                <li><a href="contact.html" class="head" >Contact Us</a></li>
+                <li><a href="account.html"  class="head">Account</a></li>
+            </ul>
+        </nav>
+
+      <form action="success.html" onsubmit="return validateform()" novalidate> <!--Novalidate: To disable browser validation like required, minlength-->
+        <table > 
+
+            <tr>
+              <td><label for="uname" style="color: black;">User Name:</label></td><td><input type="text" placeholder="Enter User name" class="m1" id="uname" name="myname" onblur="validate8()" ></td>
+          </tr>
+          <tr><td></td><td><span id="error8"></span></td></tr>
+
+            <tr>
+            <td><label for="password" style="color: black;">password:</label></td>
+            <td><input type="password" id="pass" class="m1" name="password" placeholder="Enter password" onblur="validate3()"></td>
+            <tr><td></td><td><span id="error3"></span></td></tr>
+
+            </tr>
+
+            <tr>
+                <td><label for="c_password" style="color: black;">Confirm password:</label></td>
+                <td><input type="password" id="c_pass" class="m1" name="pass" placeholder="Enter password" onblur="validate4()"></td>
+                <tr><td></td><td><span id="error4"></span></td></tr>
+            </tr>
+                <tr>
+                    <td><label for="Age" style="color: black;">Age:</label></td>
+                    <td><input type="number" id="age" name="age" class="m1" placeholder="Enter age" onblur="validate6()" ></td>
+                    <tr><td></td><td><span id="error6"></span></td></tr>
+                    </tr>
+           
+           
+
+     <tr>
+                <td><label style="color: black;">EMAIL:</label></td>
+                <td>
+                    <label for="Email" style="color: black;"></label><input type="email" id="mail" class="m1" name="Email" placeholder="Enter Email Id" onblur="validate5()">
+                    
+                </td>
+                <tr><td></td><td><span id="error5"></span></td></tr>
+    </tr>
+
+    <tr>
+      <br>
+                <td rowspan="2"><input type="submit" id="i1" value="Register">   <input type="reset" id="i1"></td>
+                </tr>
+
+        </table>
+    </form>
+
+    <script src="validation2.js"></script>
+
+        </body>
+        </html>
+      
